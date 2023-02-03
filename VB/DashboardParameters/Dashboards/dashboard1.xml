@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Sample Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="localhost_NorthwindWin_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="TYUREVA-NB10\SQLEXPRESS01" />
+          <Parameter Name="database" Value="NorthwindWin" />
+          <Parameter Name="useIntegratedSecurity" Value="True" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="" />
+          <Parameter Name="password" Value="" />
+        </Parameters>
+      </Connection>
+      <Query Type="StoredProcQuery" Name="GetOrdersByID">
+        <Parameter Name="@data" Type="DevExpress.DataAccess.Expression">(System.String)(JOIN(?orderIDs))</Parameter>
+        <ProcName>GetOrdersByID</ProcName>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="GetOrdersByID">
+            <Field Name="OrderID" Type="Int32" />
+            <Field Name="CustomerID" Type="String" />
+            <Field Name="EmployeeID" Type="Int32" />
+            <Field Name="OrderDate" Type="DateTime" />
+            <Field Name="RequiredDate" Type="DateTime" />
+            <Field Name="ShippedDate" Type="DateTime" />
+            <Field Name="ShipVia" Type="Int32" />
+            <Field Name="Freight" Type="Decimal" />
+            <Field Name="ShipName" Type="String" />
+            <Field Name="ShipAddress" Type="String" />
+            <Field Name="ShipCity" Type="String" />
+            <Field Name="ShipRegion" Type="String" />
+            <Field Name="ShipPostalCode" Type="String" />
+            <Field Name="ShipCountry" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="orderIDs" AllowMultiselect="true">
+      <Values>
+        <Value>10248</Value>
+        <Value>10249</Value>
+        <Value>10250</Value>
+      </Values>
+      <StaticListLookUpSettings>
+        <Values>
+          <Value>10248</Value>
+          <Value>10249</Value>
+          <Value>10250</Value>
+        </Values>
+      </StaticListLookUpSettings>
+    </Parameter>
+  </Parameters>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="dashboardSqlDataSource1" DataMember="GetOrdersByID">
+      <DataItems>
+        <Dimension DataMember="OrderID" DefaultId="DataItem0">
+          <NumericFormat FormatType="General" />
+        </Dimension>
+        <Dimension DataMember="CustomerID" DefaultId="DataItem1" />
+        <Dimension DataMember="ShipCountry" DefaultId="DataItem2" />
+        <Dimension DataMember="OrderDate" DefaultId="DataItem3" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+      <ColumnFilterOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
