@@ -47,7 +47,7 @@ In the invoked **Expression Editor**, pass the name of the dashboard parameter (
 
 ![Expression Editor](./images/expression-editor.png)
 
-Click **OK** to apply the specified settings.
+Click **OK** to apply the specified settings. 
 
 ### Change the Default Parameter Value in Code
 
