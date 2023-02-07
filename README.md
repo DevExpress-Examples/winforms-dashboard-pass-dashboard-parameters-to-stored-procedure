@@ -1,7 +1,3 @@
-<!-- default badges list -->
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1144408)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
 # Dashboard for WinForms - How to Pass a Dashboard Parameter to a Stored Procedure
 
 This example shows how to pass a [dashboard parameter](https://docs.devexpress.com/Dashboard/16169) to a [stored procedure](https://docs.devexpress.com/Dashboard/113946). In this example, the [DashboardDesigner.CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardDesigner.CustomParameters) is handled to change the dashboard parameter's default value before it is passed to the stored procedure. 
