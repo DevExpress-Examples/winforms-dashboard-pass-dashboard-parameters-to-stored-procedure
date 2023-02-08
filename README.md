@@ -4,7 +4,7 @@
 <!-- default badges end -->
 # Dashboard for WinForms - How to Pass a Dashboard Parameter to a Stored Procedure
 
-This example shows how to pass a [dashboard parameter](https://docs.devexpress.com/Dashboard/16169) to a [stored procedure](https://docs.devexpress.com/Dashboard/113946). In this example, the [DashboardDesigner.CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardDesigner.CustomParameters) is handled to change the dashboard parameter's default value before it is passed to the stored procedure. 
+This example shows how to pass a [dashboard parameter](https://docs.devexpress.com/Dashboard/16169) to a [stored procedure](https://docs.devexpress.com/Dashboard/113946). In this example, the [DashboardDesigner.CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardDesigner.CustomParameters) event is handled to change the dashboard parameter's default value before it is passed to the stored procedure.
 
 In the result, only the values specified in the `CustomParameters` event are in effect.
 
@@ -22,7 +22,7 @@ In this example, the **orderIDs** dashboard parameter is created. Specify the fo
 
 - Enable the `Allow Multiselect` property to select multiple values for the parameter.
 - Set the `Look-up Settings` property to *Static List*. The following values are available for the parameter: 10248, 10249, 10250.
-- Ebable the `Select All` property to select all values in the initial state of the dashboard.
+- Enable the `Select All` property to select all values in the initial state of the dashboard.
 
 ![Dashboard Parameter Settings](./images/dashboard-parameters.png)
 
@@ -32,13 +32,13 @@ In the [Query Editor](https://docs.devexpress.com/Dashboard/115206/) dialog, sel
 
 ![Select A Stored Procedure](./images/select-stored-procedure.png)
 
-On the next page, bind the query parameter to the earlier created dashboard parameter. 
+On the next page, bind the query parameter to the dashboard parameter created earlier.
 
 ### Bind the Query Parameter to the Dashboard Parameter
 
 You cannot pass a multi-value parameter value to a stored procedure directly. To pass a multi-value parameter to a stored procedure, convert the array of parameter values to a string with the JOIN() function if you use the Microsoft SQL Server, MySQL, or Oracle database system. The stored procedure code should parse the resulting string to get the dashboard parameter values.
 
-To do this, on the second page of the Query Editor, enable the *Expression* checkbox for the query parameter. From the drop-down list in the **Value** column, select the *Expression Editor* option.
+To do this, on the second page of the Query Editor, enable the *Expression* check box for the query parameter. From the drop-down list in the **Value** column, select the *Expression Editor* option.
 
 ![Query Parameters Settings](./images/configure-query-params.png)
 
