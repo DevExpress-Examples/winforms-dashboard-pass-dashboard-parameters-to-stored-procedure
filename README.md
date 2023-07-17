@@ -67,7 +67,7 @@ As a result, a user sees a dashboard based on the data from the stored procedure
 
 ## Files to Review
 
-* [DesignerForm1.cs](CS\DashboardParameters\DesignerForm1.cs)
+* [DesignerForm1.cs](cs/DashboardParameters/DesignerForm1.cs) (VB: [DesignerForm1.vb](VB/DashboardParameters/DesignerForm1.vb))
 
 ## Documentation
 
